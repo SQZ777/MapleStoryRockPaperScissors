@@ -1,25 +1,25 @@
 <div class="game-group container pt-3">
     <div class="row">
       <div class="col-sm">
-        <div class="p-2 d-flex justify-content-center">出拳機率</div>
+        <div class="p-2 info d-flex justify-content-center">推薦出拳：{{recommendInfo}}</div>
       </div>
     </div>
     <div class="row">
-      <div class="paper-win-rate col-sm">
-        <div class="p-2 d-flex justify-content-center">0%</div>
+      <div class="col-sm">
+        <div class="paper-win-rate p-2 d-flex justify-content-center">我出布的勝率：{{paperWinRate}}%：平手率：{{paperDrawRate}}%</div>
       </div>
-      <div class="scissors-win-rate col-sm">
-        <div class="p-2 d-flex justify-content-center">0%</div>
+      <div class="col-sm">
+        <div class="p-2 scissors-rate d-flex justify-content-center">我出剪刀的勝率：{{scissorsWinRate}}%：平手率：{{scissorsDrawRate}}%</div>
       </div>
-      <div class="stone-win-rate col-sm">
-        <div class="p-2 d-flex justify-content-center">0%</div>
+      <div class="col-sm">
+        <div class="p-2 stone-rate d-flex justify-content-center">我出石頭的勝率：{{stoneWinRate}}%：平手率：{{stoneDrawRate}}%</div>
       </div>
     </div>
     <div class="row">
       <div class="paper col-sm">
         <button id="paper-btn" v-on:click="sub('paper')" class="w-100 btn btn-dark btn-lg">
           <i class="far fa-hand-paper"></i>
-        </butto>
+          </butto>
       </div>
       <div class="scissors col-sm">
         <button id="scissors-btn" v-on:click="sub('scissors')" class="w-100 btn btn-dark btn-lg">
@@ -34,34 +34,32 @@
     </div>
     <div class="row">
       <div class="col-sm">
-        <div class="p-2 d-flex justify-content-center pt-3">武公出的拳數紀錄</div>
+        <div class="p-2 d-flex justify-content-center pt-3">武公剩餘出拳</div>
       </div>
     </div>
     <div class="row">
       <div class="col-sm">
         <div class="d-flex align-items-center justify-content-center">
           <div id="paper-count" class="p-2 borders"> {{ paperCount }} </div>
-         <button class="btn btn-light">+</button>
+          <button class="btn btn-light">+</button>
         </div>
       </div>
-          <div class="col-sm">
+      <div class="col-sm">
         <div class="d-flex align-items-center justify-content-center">
           <div class="p-2 scissors-count borders"> {{ scissorsCount }} </div>
-         <button class="btn btn-light">+</button>
+          <button class="btn btn-light">+</button>
         </div>
       </div>
-          <div class="col-sm">
+      <div class="col-sm">
         <div class="d-flex align-items-center justify-content-center">
           <div class="p-2 stone-count borders">{{ stoneCount }}</div>
-         <button class="btn btn-light">+</button>
+          <button class="btn btn-light">+</button>
         </div>
       </div>
     </div>
-    <span class="row">
+    <div class="row">
       <div class="d-flex justify-content-center col-sm">
-      <button class="btn btn-dark">RESET</button>  
+        <button v-on:click="reset()" class="m-2 btn btn-dark">RESET</button>
       </div>
-      
-    </span>
+    </div>
   </div>
-  
