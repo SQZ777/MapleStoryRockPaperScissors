@@ -1,0 +1,21 @@
+.game-group{
+    height: 300px;
+  }
+  
+  .info{
+    font-size: 2em;
+  }
+  
+  .row{
+    .scissors{
+      button{
+        i{
+        transform: rotate(90deg)     
+        }
+      }
+    }
+  }
+  
+  .msg-count{
+    font-size: 2em;
+  }
