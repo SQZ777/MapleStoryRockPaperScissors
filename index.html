@@ -17,17 +17,17 @@
     </div>
     <div class="row">
       <div class="paper col-sm">
-        <button id="paper-btn" v-on:click="paperCount -= 1" class="w-100 btn btn-dark btn-lg">
+        <button id="paper-btn" v-on:click="sub('paper')" class="w-100 btn btn-dark btn-lg">
           <i class="far fa-hand-paper"></i>
         </butto>
       </div>
       <div class="scissors col-sm">
-        <button id="scissors-btn" v-on:click="scissorsCount -= 1" class="w-100 btn btn-dark btn-lg">
+        <button id="scissors-btn" v-on:click="sub('scissors')" class="w-100 btn btn-dark btn-lg">
           <i class="far fa-hand-scissors"></i>
         </button>
       </div>
       <div class="stone col-sm">
-        <button id="stone-btn" v-on:click="stoneCount -= 1" class="w-100 btn btn-dark btn-lg">
+        <button id="stone-btn" v-on:click="sub('stone')" class="w-100 btn btn-dark btn-lg">
           <i class="far fa-hand-rock"></i>
         </button>
       </div>
@@ -57,5 +57,11 @@
         </div>
       </div>
     </div>
+    <span class="row">
+      <div class="d-flex justify-content-center col-sm">
+      <button class="btn btn-dark">RESET</button>  
+      </div>
+      
+    </span>
   </div>
   
