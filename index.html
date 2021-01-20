@@ -1,46 +1,61 @@
 <div class="game-group container pt-3">
-  <div class="row">
-    <div class="col-sm">
-      <p class="d-flex justify-content-center">各拳勝率</p>
+    <div class="row">
+      <div class="col-sm">
+        <div class="p-2 d-flex justify-content-center">出拳機率</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="paper-win-rate col-sm">
+        <div class="p-2 d-flex justify-content-center">0%</div>
+      </div>
+      <div class="scissors-win-rate col-sm">
+        <div class="p-2 d-flex justify-content-center">0%</div>
+      </div>
+      <div class="stone-win-rate col-sm">
+        <div class="p-2 d-flex justify-content-center">0%</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="paper col-sm">
+        <button id="paper-btn" v-on:click="paperCount -= 1" class="w-100 btn btn-dark btn-lg">
+          <i class="far fa-hand-paper"></i>
+        </butto>
+      </div>
+      <div class="scissors col-sm">
+        <button id="scissors-btn" v-on:click="scissorsCount -= 1" class="w-100 btn btn-dark btn-lg">
+          <i class="far fa-hand-scissors"></i>
+        </button>
+      </div>
+      <div class="stone col-sm">
+        <button id="stone-btn" v-on:click="stoneCount -= 1" class="w-100 btn btn-dark btn-lg">
+          <i class="far fa-hand-rock"></i>
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <div class="p-2 d-flex justify-content-center pt-3">武公出的拳數紀錄</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <div class="d-flex align-items-center justify-content-center">
+          <div id="paper-count" class="p-2 borders"> {{ paperCount }} </div>
+         <button class="btn btn-light">+</button>
+        </div>
+      </div>
+          <div class="col-sm">
+        <div class="d-flex align-items-center justify-content-center">
+          <div class="p-2 scissors-count borders"> {{ scissorsCount }} </div>
+         <button class="btn btn-light">+</button>
+        </div>
+      </div>
+          <div class="col-sm">
+        <div class="d-flex align-items-center justify-content-center">
+          <div class="p-2 stone-count borders">{{ stoneCount }}</div>
+         <button class="btn btn-light">+</button>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="paper-win-rate col-sm">
-      <p class="d-flex justify-content-center">0%</p>
-    </div>
-    <div class="scissors-win-rate col-sm">
-      <p class="d-flex justify-content-center">0%</p>
-    </div>
-    <div class="stone-win-rate col-sm">
-      <p class="d-flex justify-content-center">0%</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="paper col-sm">
-      <button class="w-100 btn btn-dark btn-lg">
-        <i class="far fa-hand-paper"></i>
-      </button>
-    </div>
-    <div class="scissors col-sm">
-      <button class="w-100 btn btn-dark btn-lg">
-        <i class="far fa-hand-scissors"></i>
-      </button>
-    </div>
-    <div class="stone col-sm">
-      <button class="w-100 btn btn-dark btn-lg">
-        <i class="far fa-hand-rock"></i>
-      </button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      <p class="d-flex justify-content-center paper-count">123</p>
-    </div>
-    <div class="col-sm">
-      <p class="d-flex justify-content-center scissors-count">123</p>
-    </div>
-    <div class="col-sm">
-      <p class="d-flex justify-content-center stone-count">123</p>
-    </div>
-  </div>
-</div>
+  
