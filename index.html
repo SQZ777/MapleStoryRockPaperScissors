@@ -64,19 +64,19 @@
         <div class="col-sm">
           <div class="d-flex align-items-center justify-content-center">
             <div id="paper-count" class="p-2 borders"> 布：{{ paperCount }} </div>
-            <button v-on:click="add('paper')" class="btn btn-light">+</button>
+            <button style="display:none" v-on:click="add('paper')" class="btn btn-light">+</button>
           </div>
         </div>
         <div class="col-sm">
           <div class="d-flex align-items-center justify-content-center">
             <div class="p-2 scissors-count borders"> 剪刀：{{ scissorsCount }} </div>
-            <button v-on:click="add('scissors')" class="btn btn-light">+</button>
+            <button style="display:none" v-on:click="add('scissors')" class="btn btn-light">+</button>
           </div>
         </div>
         <div class="col-sm">
           <div class="d-flex align-items-center justify-content-center">
             <div class="p-2 stone-count borders"> 石頭：{{ stoneCount }}</div>
-            <button v-on:click="add('stone')" class="btn btn-light">+</button>
+            <button style="display:none" v-on:click="add('stone')" class="btn btn-light">+</button>
           </div>
         </div>
       </div>
