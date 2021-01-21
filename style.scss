@@ -1,0 +1,27 @@
+.game-group{
+  height: 300px;
+}
+
+.punch{
+  i{
+    font-size: 5em;
+  }
+}
+
+.info{
+  font-size: 2em;
+}
+
+.row{
+  .scissors{
+    button{
+      i{
+      transform: rotate(90deg)     
+      }
+    }
+  }
+}
+
+.msg-count{
+  font-size: 2em;
+}
