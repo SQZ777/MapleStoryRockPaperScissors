@@ -1,82 +1,105 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8"/>  
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-<div class="game-group container pt-3">
-  <div class="row">
-    <div class="col-sm">
-      <div class="p-2 red info text-danger font-weight-bold d-flex justify-content-center">武公出了什麼拳你就選哪個</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="paper m-2 col-sm">
-      <button id="paper-btn" v-on:click="sub('paper')" class="w-100 btn btn-dark btn-lg punch">
-        <i class="far fa-hand-paper"></i>
-        </butto>
-    </div>
-    <div class="scissors m-2 col-sm">
-      <button id="scissors-btn" v-on:click="sub('scissors')" class="w-100 btn btn-dark btn-lg punch">
-        <i class="far fa-hand-scissors"></i>
-      </button>
-    </div>
-    <div class="stone m-2 col-sm">
-      <button id="stone-btn" v-on:click="sub('stone')" class="w-100 btn btn-dark btn-lg punch">
-        <i class="far fa-hand-rock"></i>
-      </button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      <div class="p-2 info d-flex justify-content-center">推薦出拳：{{recommendInfo}}</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      <div class="p-2 paper-rates d-flex justify-content-center">布贏的機率：{{paperWinRate}}% 平手:{{paperDrawRate}}%</div>
-      <div class="paper-rates d-flex justify-content-center">出布不會輸的機率：{{paperNoLoseRate}}%</div>
-    </div>
-    <div class="col-sm">
-      <div class="p-2 scissors-rates d-flex justify-content-center">剪刀贏的機率：{{scissorsWinRate}}% 平手：{{scissorsDrawRate}}%</div>
-      <div class="scissors-rates d-flex justify-content-center">出剪刀不會輸的機率：{{scissorsNoLoseRate}}%</div>
-    </div>
-    <div class="col-sm">
-      <div class="p-2 stone-rates d-flex justify-content-center">石頭贏的機率：{{stoneWinRate}}% 平手：{{stoneDrawRate}}%</div>
-      <div class="stone-rates d-flex justify-content-center">出石頭不會輸的機率：{{stoneNoLoseRate}}%</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      <div class="p-2 d-flex justify-content-center pt-3">武公剩餘出拳</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      <div class="d-flex align-items-center justify-content-center">
-        <div id="paper-count" class="p-2 borders"> 布：{{ paperCount }} </div>
-        <button v-on:click="add('paper')" class="btn btn-light">+</button>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="shortcut icon" type="image/x-icon"
+    href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type=""
+    href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+    color="#111">
+  <link rel="canonical" href="https://codepen.io/SQZ777isme/pen/OJRqdaY">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <script
+    src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-7f4d47902dc785f30dedcac9c996b9f31d4dfcc33567cc48f0431bc918c2bf05.js"></script>
+  <script
+    src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-bb9a2ba1f03f6147732cb3cd52ac86c6b24524aa87a05ed0b726f11e46d7e277.js"></script>
+  <script
+    src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+  <title>maplestoryrockpaperscissors</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="game-group container pt-3">
+      <div class="row">
+        <div class="col-sm">
+          <div class="p-2 red info text-danger font-weight-bold d-flex justify-content-center">武公出了什麼拳你就選哪個</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="paper m-2 col-sm">
+          <button id="paper-btn" v-on:click="sub('paper')" class="w-100 btn btn-dark btn-lg punch">
+            <i class="far fa-hand-paper"></i>
+            </butto>
+        </div>
+        <div class="scissors m-2 col-sm">
+          <button id="scissors-btn" v-on:click="sub('scissors')" class="w-100 btn btn-dark btn-lg punch">
+            <i class="far fa-hand-scissors"></i>
+          </button>
+        </div>
+        <div class="stone m-2 col-sm">
+          <button id="stone-btn" v-on:click="sub('stone')" class="w-100 btn btn-dark btn-lg punch">
+            <i class="far fa-hand-rock"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div class="p-2 info d-flex justify-content-center">推薦出拳：{{recommendInfo}}</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div class="p-2 paper-rates d-flex justify-content-center">布贏的機率：{{paperWinRate}}% 平手:{{paperDrawRate}}%</div>
+          <div class="paper-rates d-flex justify-content-center">出布不會輸的機率：{{paperNoLoseRate}}%</div>
+        </div>
+        <div class="col-sm">
+          <div class="p-2 scissors-rates d-flex justify-content-center">剪刀贏的機率：{{scissorsWinRate}}%
+            平手：{{scissorsDrawRate}}%</div>
+          <div class="scissors-rates d-flex justify-content-center">出剪刀不會輸的機率：{{scissorsNoLoseRate}}%</div>
+        </div>
+        <div class="col-sm">
+          <div class="p-2 stone-rates d-flex justify-content-center">石頭贏的機率：{{stoneWinRate}}% 平手：{{stoneDrawRate}}%
+          </div>
+          <div class="stone-rates d-flex justify-content-center">出石頭不會輸的機率：{{stoneNoLoseRate}}%</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div class="p-2 d-flex justify-content-center pt-3">武公剩餘出拳</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div class="d-flex align-items-center justify-content-center">
+            <div id="paper-count" class="p-2 borders"> 布：{{ paperCount }} </div>
+            <button v-on:click="add('paper')" class="btn btn-light">+</button>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="d-flex align-items-center justify-content-center">
+            <div class="p-2 scissors-count borders"> 剪刀：{{ scissorsCount }} </div>
+            <button v-on:click="add('scissors')" class="btn btn-light">+</button>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="d-flex align-items-center justify-content-center">
+            <div class="p-2 stone-count borders"> 石頭：{{ stoneCount }}</div>
+            <button v-on:click="add('stone')" class="btn btn-light">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="d-flex justify-content-center col-sm">
+          <button v-on:click="reset()" class="m-2 btn btn-dark">RESET</button>
+        </div>
       </div>
     </div>
-    <div class="col-sm">
-      <div class="d-flex align-items-center justify-content-center">
-        <div class="p-2 scissors-count borders"> 剪刀：{{ scissorsCount }} </div>
-        <button v-on:click="add('scissors')" class="btn btn-light">+</button>
-      </div>
-    </div>
-    <div class="col-sm">
-      <div class="d-flex align-items-center justify-content-center">
-        <div class="p-2 stone-count borders"> 石頭：{{ stoneCount }}</div>
-        <button v-on:click="add('stone')"class="btn btn-light">+</button>
-      </div>
-    </div>
   </div>
-  <div class="row">
-    <div class="d-flex justify-content-center col-sm">
-      <button v-on:click="reset()" class="m-2 btn btn-dark">RESET</button>
-    </div>
-  </div>
-</div>
+  <script src="/dist/build.js"></script>
 </body>
+
 </html>
