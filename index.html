@@ -30,6 +30,12 @@
         </div>
       </div>
       <div class="row">
+        
+      <div class="stone m-2 col-sm">
+        <button id="stone-btn" v-on:click="sub('stone')" class="w-100 btn btn-dark btn-lg punch">
+          <i class="far fa-hand-rock"></i>
+        </button>
+      </div>
         <div class="paper m-2 col-sm">
           <button id="paper-btn" v-on:click="sub('paper')" class="w-100 btn btn-dark btn-lg punch">
             <i class="far fa-hand-paper"></i>
@@ -40,18 +46,18 @@
             <i class="far fa-hand-scissors"></i>
           </button>
         </div>
-        <div class="stone m-2 col-sm">
-          <button id="stone-btn" v-on:click="sub('stone')" class="w-100 btn btn-dark btn-lg punch">
-            <i class="far fa-hand-rock"></i>
-          </button>
         </div>
-      </div>
       <div class="row">
         <div class="col-sm">
           <div class="p-2 info d-flex justify-content-center">推薦出拳：{{recommendInfo}}</div>
         </div>
       </div>
       <div class="row">
+        <div class="col-sm">
+          <div class="p-2 stone-rates d-flex justify-content-center">石頭贏的機率：{{stoneWinRate}}% 平手：{{stoneDrawRate}}%
+          </div>
+          <div class="stone-rates d-flex justify-content-center">出石頭不會輸的機率：{{stoneNoLoseRate}}%</div>
+        </div>
         <div class="col-sm">
           <div class="p-2 paper-rates d-flex justify-content-center">布贏的機率：{{paperWinRate}}% 平手:{{paperDrawRate}}%</div>
           <div class="paper-rates d-flex justify-content-center">出布不會輸的機率：{{paperNoLoseRate}}%</div>
@@ -60,11 +66,6 @@
           <div class="p-2 scissors-rates d-flex justify-content-center">剪刀贏的機率：{{scissorsWinRate}}%
             平手：{{scissorsDrawRate}}%</div>
           <div class="scissors-rates d-flex justify-content-center">出剪刀不會輸的機率：{{scissorsNoLoseRate}}%</div>
-        </div>
-        <div class="col-sm">
-          <div class="p-2 stone-rates d-flex justify-content-center">石頭贏的機率：{{stoneWinRate}}% 平手：{{stoneDrawRate}}%
-          </div>
-          <div class="stone-rates d-flex justify-content-center">出石頭不會輸的機率：{{stoneNoLoseRate}}%</div>
         </div>
       </div>
       <div class="row">
@@ -75,6 +76,12 @@
       <div class="row">
         <div class="col-sm">
           <div class="d-flex align-items-center justify-content-center">
+            <div class="p-2 stone-count borders"> 石頭：{{ stoneCount }}</div>
+            <button v-on:click="add('stone')" class="btn btn-light">+</button>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="d-flex align-items-center justify-content-center">
             <div id="paper-count" class="p-2 borders"> 布：{{ paperCount }} </div>
             <button v-on:click="add('paper')" class="btn btn-light">+</button>
           </div>
@@ -83,12 +90,6 @@
           <div class="d-flex align-items-center justify-content-center">
             <div class="p-2 scissors-count borders"> 剪刀：{{ scissorsCount }} </div>
             <button v-on:click="add('scissors')" class="btn btn-light">+</button>
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="d-flex align-items-center justify-content-center">
-            <div class="p-2 stone-count borders"> 石頭：{{ stoneCount }}</div>
-            <button v-on:click="add('stone')" class="btn btn-light">+</button>
           </div>
         </div>
       </div>
