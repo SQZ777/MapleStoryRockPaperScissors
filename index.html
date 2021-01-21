@@ -3,22 +3,19 @@
 
 <head>
   <meta charset="utf-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJFH43S085"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-FJFH43S085');
+  </script>
   <link rel="stylesheet" type="text/css" href="./style.css">
-  <link rel="shortcut icon" type="image/x-icon"
-    href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
-  <link rel="mask-icon" type=""
-    href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
-    color="#111">
-  <link rel="canonical" href="https://codepen.io/SQZ777isme/pen/OJRqdaY">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-  <script
-    src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-7f4d47902dc785f30dedcac9c996b9f31d4dfcc33567cc48f0431bc918c2bf05.js"></script>
-  <script
-    src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-bb9a2ba1f03f6147732cb3cd52ac86c6b24524aa87a05ed0b726f11e46d7e277.js"></script>
-  <script
-    src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
-  <title>maplestoryrockpaperscissors</title>
+  <title>來跟武公猜拳RRR</title>
 </head>
 
 <body>
@@ -76,20 +73,20 @@
       <div class="row">
         <div class="col-sm">
           <div class="d-flex align-items-center justify-content-center">
-            <div class="p-2 stone-count borders"> 石頭：{{ stoneCount }}</div>
-            <button v-on:click="add('stone')" class="btn btn-light">+</button>
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="d-flex align-items-center justify-content-center">
             <div id="paper-count" class="p-2 borders"> 布：{{ paperCount }} </div>
-            <button v-on:click="add('paper')" class="btn btn-light">+</button>
+            <button style="display:none" v-on:click="add('paper')" class="btn btn-light">+</button>
           </div>
         </div>
         <div class="col-sm">
           <div class="d-flex align-items-center justify-content-center">
             <div class="p-2 scissors-count borders"> 剪刀：{{ scissorsCount }} </div>
-            <button v-on:click="add('scissors')" class="btn btn-light">+</button>
+            <button style="display:none" v-on:click="add('scissors')" class="btn btn-light">+</button>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="d-flex align-items-center justify-content-center">
+            <div class="p-2 stone-count borders"> 石頭：{{ stoneCount }}</div>
+            <button style="display:none" v-on:click="add('stone')" class="btn btn-light">+</button>
           </div>
         </div>
       </div>
@@ -98,8 +95,32 @@
           <button v-on:click="reset()" class="m-2 btn btn-dark">RESET</button>
         </div>
       </div>
+      <div class="row">
+        <div class="d-flex justify-content-center col-sm">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" target="_blank"
+                href="https://www.notion.so/365b52e0390b4c07b48eff69c7b05694">📃使用說明</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href="https://codepen.io/SQZ777isme/pen/OJRqdaY">🖋CodePen 連結</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href="https://github.com/SQZ777/MapleStoryRockPaperScissors">✨GitHub
+                連結</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href="https://www.twitch.tv/thisiceisfromtaiwan">🟣我的Twitch</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href="https://dotblogs.com.tw/Im_sqz777">📕我的部落格</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
+
   <script src="/dist/build.js"></script>
 </body>
 
